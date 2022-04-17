@@ -64,6 +64,7 @@ struct ContentView: View {
                 
             }
         }.searchable(text: self.$searchText)
+            .navigationViewStyle(.stack)
     }
     
     private func deleteTask(index: IndexSet) -> Void {
