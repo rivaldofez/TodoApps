@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TaskListRow: View {
     @ObservedObject var task: Task
-    
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         Toggle(isOn: self.$task.complete){
@@ -28,6 +28,11 @@ struct TaskListRow: View {
             }
         }
         .toggleStyle(CheckBoxStyle(taskColor: self.task.priority.priorityColor()))
+        .onReceive(self.task.objectWillChange){_ in
+            if self.viewContext.hasChanges {
+                try? self.viewContext.save()
+            }
+        }
     }
 }
 

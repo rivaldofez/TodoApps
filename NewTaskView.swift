@@ -12,6 +12,8 @@ import SwiftUI
 struct NewTaskView: View {
     @Binding var isShow: Bool
     
+    // add data to core data
+    @Environment(\.managedObjectContext) private var viewContext
     
     @State private var taskName: String = ""
     @State private var taskPriority: Priority = .normal
@@ -72,6 +74,8 @@ struct NewTaskView: View {
                     }
                     
                     self.isShow = false
+                    
+                    self.addNewTask(name: self.taskName, priority: self.taskPriority)
                 }){
                     Text("Add new Task")
                         .font(.system( .title3, design: .rounded))
@@ -90,6 +94,23 @@ struct NewTaskView: View {
             .offset(y: self.isEditing ? -320 : 0)
         }
         .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    private func addNewTask(name: String, priority: Priority) -> Void {
+        let newTask = Task(context: viewContext)
+        newTask.id = UUID()
+        newTask.name = name
+        newTask.priority = priority
+        newTask.complete = false
+        
+        do {
+            try viewContext.save()
+            print("view context called")
+        }catch {
+            print(error.localizedDescription)
+            print("error called")
+        }
+        
     }
 }
 
