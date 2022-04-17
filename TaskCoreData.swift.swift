@@ -19,7 +19,15 @@ public class Task: NSManagedObject {
 
 
 extension Task: Identifiable {
-    
+    var priority: Priority {
+        get {
+            Priority(rawValue: Int(priorityNum)) ?? .normal
+        }
+         
+        set {
+            self.priorityNum = Int32(newValue.rawValue)
+        }
+    }
 }
 
 enum Priority: Int {
