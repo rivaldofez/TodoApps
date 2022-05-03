@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Simple To Do List Apps/h3>
+  <h3 align="center">Simple ToDo List Apps/h3>
   </br>
 </div>
 
@@ -130,7 +130,7 @@ This apps in one of my project while learning SwiftUI and Swift Playground
 
 [stars-shield]: https://img.shields.io/github/stars/rivaldofez/TodoApps.svg?style=for-the-badge
 
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/rivaldofez/TodoApps/stargazers
 
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 
