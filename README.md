@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Simple ToDo List Apps/h3>
+  <h3 align="center">Simple ToDo List Apps </h3>
   </br>
 </div>
 
