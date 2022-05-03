@@ -49,6 +49,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button(action: {
                         self.showNewTask = true
+                        print("tap button add")
                     }){
                         Image(systemName: "plus.circle.fill")
                             .foregroundColor(.accentColor)
